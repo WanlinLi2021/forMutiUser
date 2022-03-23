@@ -36,6 +36,8 @@ def getIpAdress():
 
 user_output = 'user/'  + getIpAdress() +'/output/' 
 output_file = user_output + 'output.csv'
+if not os.path.exists(output_file):
+    output_file = 'user/example/output/output.csv'
 output_df = pd.read_csv(output_file)
 #--------------------------------------
 table_interact = dash_table.DataTable(
